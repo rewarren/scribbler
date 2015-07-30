@@ -1,13 +1,14 @@
-<h2>Blog Posts
-  <a href="/posts/new">Create Post</a>
-</h2>
+<h2>Rachel's Blog Posts Extraordinaire</h2>
+
+<h3>  <%= link_to "create post", new_post_path %>
+</h3>
 
 <ul>
   <%= @posts.each do |post| %>
-    <li>
-      <a href="posts/<%= post.id %>">
-        <%= post.title %>
-      </a>
-    </li>
+  <li class = "post_list">
+    <span class = "title"><%= post.title %></span>
+    posted on <%= post.date %>,
+    <%= link_to "read", post %>
+  </li>
   <% end %>
 </ul>

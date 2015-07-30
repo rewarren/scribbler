@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
+h2 {
+  text-size: 16px;
+  font-style: italic;
+}
+
+h3 {
+  font-size: 12px;
+}
+
+.title {
+  text-decoration: underline;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.post_list {
+  padding: 1em;
+}
