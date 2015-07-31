@@ -1,10 +1,12 @@
-<h2>Rachel's Blog Posts Extraordinaire</h2>
+
+
+<h2 class="blogTitle">Scribbler Anthology of Blog Posts Extraordinaire by Oridinary Folk</h2>
 
 <h3>  <%= link_to "create post", new_post_path %>
 </h3>
 
 <ul>
-  <%= @posts.each do |post| %>
+  <% @posts.each do |post| %>
   <li class = "post_list">
     <span class = "title"><%= post.title %></span>
     posted on <%= post.date %>,

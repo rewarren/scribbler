@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  skip_before_action :authenticate, only: [:index]
 
   def index
     @posts = Post.all.order(:id).reverse
@@ -12,7 +13,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create!(post_params)
-
+    @post = current_user.create!(post_params)
     redirect_to post_path(@post)
   end
 
@@ -24,6 +25,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+
   end
 
 

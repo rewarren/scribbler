@@ -13,24 +13,136 @@
  *= require_tree .
  *= require_self
  */
-
-h2 {
-  text-size: 16px;
-  font-style: italic;
+html {
+  box-sizing: border-box;
 }
 
-h3 {
-  font-size: 12px;
+* {
+   box-sizing: inherit;
+   margin: 0;
+   padding: 0;
+ }
+
+/**********navigation************/
+header {
+  background-color: #A53862;
+  width: 100%;
+  line-height: 50px;
+ }
+
+nav {
+  width: 100%;
+  text-align: right
+}
+
+nav li {
+  display: inline-block;
+  font-size: 20px;
+  padding: 0px 20px 0px 20px;
+}
+
+nav a {
+  color: #FFF;
+  text-decoration: none;
+}
+
+nav a:hover {
+  font-weight: bold;
+}
+
+nav a:visited {
+  color: #FFF;
+}
+
+/***********blog post**************/
+.post {
+  padding: 20px;
+  border: .15em solid #235560;
+  margin: 20px 100px;
+}
+
+.posttitle {
+  font-size: 36px;
+}
+
+.postdate {
+  font-style: italic;
+  font-size: 14px;
+  padding-bottom: 20px;
+}
+
+.postcontent {
+  font-size: 18px;
+}
+
+.postnav a {
+  color: #A53862;
+  text-decoration: none;
+  font-size: 10px;
+}
+
+.postnav a:hover {
+  font-weight: bold;
+}
+
+.postnav a:visited {
+  color: #A53862;
+}
+
+
+/***********COMMENTS***************/
+
+.comments , .addcomment {
+  border: .15em solid #235560;
+  margin: 20px 100px;
 }
 
 .title {
-  text-decoration: underline;
+  background-color: #FF4453;
+  width: 100%;
+  color: #FFF;
+  text-align: center;
+  font-size: 20px;
+  border: 1px 0 1px 0 solid;
+  line-height: 30px;
 }
 
-ul {
-  list-style-type: none;
+.eachcomment {
+  border-bottom: .25em solid #D5DED9;
+  padding: 1em
 }
 
-.post_list {
-  padding: 1em;
+.eachcomment a {
+  color: #A53862;
+  text-decoration: none;
+  font-size: 10px;
+}
+
+
+/***********TEXTBOXES**************/
+
+input[type="text"] {
+  width: 150px;
+  line-height: 30px;
+}
+
+label {
+  font-size: 20px;
+  font-weight: bold;
+  label-width: 70px;
+}
+
+
+input[name="post[title]"] {
+  width: 500px;
+}
+
+input[name="post[content]"], input[name="comment[content]"] {
+  width: 500px;
+  height: 500px;
+}
+
+input[type="submit"] {
+  background-color: #FFA300;
+  font-size: 20px;
 }

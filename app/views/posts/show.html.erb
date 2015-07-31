@@ -1,45 +1,50 @@
-<h2>
-  <%= @post.title %>
-  <%= @post.date %>
-</h2>
+<div class="post">
+  <p class="posttitle">
+    <%= @post.title %>
+  </p>
+  <p class="postdate">
+    <%= @post.date %>
+  </p>
+  <p class="postcontent">
+    <%= @post.content %>
+  </p>
+  <p class="postnav">
+    <%= link_to "edit this blog post", edit_post_path(@post) %> *
+    <%= link_to "back to main blog", posts_path %>
+  </p>
+</div>
 
-<h3>
-  <%= @post.content %>
-</h3>
 
-<h4>Comments</h4>
+
+<div class="comments">
+  <p class="title">Comments</p>
   <% @post.comments.each do |comment| %>
-  <%= comment.author %> said "<%= comment.content %>" // <%= comment.date %>
+  <p class="eachcomment">
+    <%= comment.author %> said "<%= comment.content %>" // <%= comment.date %>
 
   <%= link_to "delete comment", [comment.post, comment], method: :delete %>
-  <% end %>
+  </p>
 
+<% end %>
+</div>
 
-
-
-
-<h4>Add a comment</h4>
-<h4>
+<div class="addcomment">
+    <p class="title">Add a comment</p>
     <%= form_for ([@post, @post.comments.build]) do |f| %>
-
-    <%= f.label :author %>
+    <p>
+    <%= f.label :author, "User" %>
     <%= f.text_field :author %>
-
+    <p>
     <%= f.label :date %>
     <%= f.text_field :date %>
-
-    <%= f.label :content %>
+    <p>
+    <%= f.label :content, "Comment" %>
+    <p>
     <%= f.text_field :content %>
-
+    <p>
     <%= f.label :post_id %>
     <%= f.text_field :post_id %>
-
+    <p>
     <%= f.submit %>
-  <% end %>
-</h4>
-
-
-<h4>
-  <%= link_to "edit this post",  edit_post_path(@post) %> //
-  <%= link_to "back to main blog", posts_path %>
-</h4>
+    <% end %>
+</div>
